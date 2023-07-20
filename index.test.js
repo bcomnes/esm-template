@@ -1,6 +1,7 @@
-import tap from 'tap'
+import test from 'node:test'
+import assert from 'node:assert'
 import { hello } from './index.js'
 
-tap.test('index export', async (t) => {
-  t.equal(hello(), 'world')
+test('index export', async (t) => {
+  assert.strictEqual(hello(), 'world', 'A message')
 })
