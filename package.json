@@ -37,12 +37,12 @@
     "url": "https://github.com/bcomnes/{{name}}.git"
   },
   "scripts": {
-    "prepublishOnly": "git push --follow-tags && gh-releas -y",
+    "prepublishOnly": "git push --follow-tags && gh-release -y",
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
     "test:standard": "standard --verbose | snazzy",
     "test:tap": "METRICS=0 c8 tap --no-coverage --color",
-    "version": "run-s prepare version:*",
+    "version": "run-s version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
     "version:git": "git add CHANGELOG.md",
     "deps": "depcruise --exclude '^node_modules' --output-type dot . | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html"
