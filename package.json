@@ -20,8 +20,8 @@
     "dependency-cruiser": "^15.0.0"
   },
   "engines": {
-    "node": "^19.0.0 || ^18.0.0",
-    "npm": "^9.0.0 || ^8.0.0"
+    "node": ">20",
+    "npm": ">10"
   },
   "homepage": "https://github.com/bcomnes/{{name}}",
   "keywords": [],
