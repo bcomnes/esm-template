@@ -33,7 +33,8 @@
     "url": "https://github.com/bcomnes/{{name}}.git"
   },
   "scripts": {
-    "prepublishOnly": "git push --follow-tags && gh-release -y",
+    "prepublishOnly": "npm run build && git push --follow-tags && gh-release -y",
+    "postpublish": "npm run clean",
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
     "test:lint": "eslint",
