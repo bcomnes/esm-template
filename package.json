@@ -10,10 +10,10 @@
   "devDependencies": {
     "@voxpelli/tsconfig": "^15.0.0",
     "neostandard": "^0.11.2",
-    "npm-run-all2": "^6.0.0",
+    "npm-run-all2": "^7.0.1",
     "auto-changelog": "^2.0.0",
     "gh-release": "^7.0.0",
-    "c8": "^8.0.0",
+    "c8": "^10.0.0",
     "typescript": "~5.6.2"
   },
   "engines": {
