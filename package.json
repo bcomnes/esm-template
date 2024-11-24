@@ -8,12 +8,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "standard": "^17.0.0",
+    "@voxpelli/tsconfig": "^15.0.0",
+    "neostandard": "^0.11.2",
     "npm-run-all2": "^6.0.0",
     "auto-changelog": "^2.0.0",
     "gh-release": "^7.0.0",
     "c8": "^8.0.0",
-    "dependency-cruiser": "^15.0.0"
+    "typescript": "~5.6.2"
   },
   "engines": {
     "node": ">20",
@@ -34,17 +35,17 @@
     "prepublishOnly": "git push --follow-tags && gh-release -y",
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
-    "test:standard": "standard --verbose",
+    "test:lint": "eslint",
+    "test:tsc": "eslint .",
     "test:node-test": "c8 node --test --test-reporter spec",
     "version": "run-s version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
     "version:git": "git add CHANGELOG.md",
-    "deps": "depcruise --exclude '^node_modules' --output-type dot . | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html"
-  },
-  "standard": {
-    "ignore": [
-      "dist"
-    ]
+    "build": "npm run clean && run-p build:*",
+    "build:declaration": "tsc -p declaration.tsconfig.json",
+    "clean": "run-p clean:*",
+    "clean:declarations-top": "rm -rf $(find . -maxdepth 1 -type f -name '*.d.ts*')",
+    "clean:declarations-lib": "rm -rf $(find lib -type f -name '*.d.ts*' ! -name '*-types.d.ts')"
   },
   "funding": {
     "type": "individual",
