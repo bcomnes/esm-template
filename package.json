@@ -9,6 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "@voxpelli/tsconfig": "^15.0.0",
+    "@types/node": "^22.1.0",
     "neostandard": "^0.11.2",
     "npm-run-all2": "^7.0.1",
     "auto-changelog": "^2.0.0",
