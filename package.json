@@ -38,7 +38,7 @@
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
     "test:lint": "eslint",
-    "test:tsc": "eslint .",
+    "test:tsc": "tsc",
     "test:node-test": "c8 node --test --test-reporter spec",
     "version": "run-s version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
