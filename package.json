@@ -36,7 +36,6 @@
     "prepublishOnly": "npm run build && git push --follow-tags && gh-release -y",
     "postpublish": "npm run clean",
     "test": "run-s test:*",
-    "test:deptree": "depcruise --validate .dependency-cruiser.json .",
     "test:lint": "eslint",
     "test:tsc": "tsc",
     "test:node-test": "c8 node --test --test-reporter spec",
