@@ -12,9 +12,7 @@
     "@types/node": "^25.0.0",
     "neostandard": "^0.13.0",
     "npm-run-all2": "^8.0.1",
-    "auto-changelog": "^2.0.0",
-    "gh-release": "^7.0.0",
-    "c8": "^11.0.0",
+    "releasearoni": "^0.1.0",
     "typescript": "~5.9.3"
   },
   "engines": {
@@ -33,15 +31,13 @@
     "url": "https://github.com/bcomnes/{{name}}.git"
   },
   "scripts": {
-    "prepublishOnly": "npm run build && git push --follow-tags && gh-release -y",
+    "prepublishOnly": "npm run build && git push --follow-tags && releasearoni -y",
     "postpublish": "npm run clean",
     "test": "run-s test:*",
     "test:lint": "eslint",
     "test:tsc": "tsc",
-    "test:node-test": "c8 node --test --test-reporter spec",
-    "version": "run-s version:*",
-    "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
-    "version:git": "git add CHANGELOG.md",
+    "test:node-test": "node --experimental-test-coverage --test-reporter=spec --test-reporter=lcov --test-reporter-destination=stdout --test-reporter-destination=lcov.info --test",
+    "version": "releasearoni version",
     "build": "npm run clean && run-p build:*",
     "build:declaration": "tsc -p declaration.tsconfig.json",
     "clean": "run-p clean:*",
@@ -51,11 +47,5 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/bcomnes"
-  },
-  "c8": {
-    "reporter": [
-      "lcov",
-      "text"
-    ]
   }
 }

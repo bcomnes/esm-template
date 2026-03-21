@@ -4,9 +4,11 @@ sandbox.js
 package-lock.json
 public
 coverage
+lcov.info
 .tap
 
 # Generated types
 
 *.d.ts
 *.d.ts.map
+.claude/settings.local.json
