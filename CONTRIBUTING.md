@@ -5,7 +5,7 @@
 Changelog and releasing are automated with npm scripts and actions. To create a release:
 
 - Navigate to the Actions tab.
-- Select the `npm bump` action.
+- Select the `Version and Release` action.
 - Trigger the action, specifying the semantic version bump that is needed.
 - Changelog, GitHub release, and npm publish are handled by the action.
 - An in-depth review of this system is documented here: [bret.io/projects/package-automation](https://bret.io/projects/package-automation/).
@@ -16,7 +16,7 @@ If for some reason this isn't working or a local release is preferred, follow th
 - Run `npm version {patch, minor, major}`.
   - This will update the version number and generate the changelog.
 - Run `npm publish`.
-  - This will push your local git branch and tags to the default remote, perform a [gh-release](https://ghub.io/gh-release), and create an npm publication.
+  - This will push your local git branch and tags to the default remote, create the GitHub release with releasearoni, and create an npm publication.
 
 ## Guidelines
 

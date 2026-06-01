@@ -21,6 +21,15 @@
   },
   "homepage": "https://github.com/bcomnes/{{name}}",
   "keywords": [],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.d.ts.map",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "CHANGELOG.md"
+  ],
   "license": "MIT",
   "type": "module",
   "module": "index.js",
@@ -31,7 +40,7 @@
     "url": "https://github.com/bcomnes/{{name}}.git"
   },
   "scripts": {
-    "prepublishOnly": "npm run build && git push --follow-tags && releasearoni -y",
+    "prepublishOnly": "releasearoni",
     "postpublish": "npm run clean",
     "test": "run-s test:*",
     "test:lint": "eslint",
