@@ -2,6 +2,7 @@ node_modules
 sandbox.js
 .nyc_output
 package-lock.json
+.claude
 public
 coverage
 lcov.info
