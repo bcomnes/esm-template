@@ -36,6 +36,8 @@ jobs:
     steps:
     - uses: actions/checkout@v7
       with:
+        # Keep the credential because npm-bump pushes the release commit and tag.
+        persist-credentials: true
         # fetch full history so releasearoni can generate changelogs properly
         fetch-depth: 0
     - name: Use Node.js
@@ -51,4 +53,6 @@ jobs:
         version-type: ${{ github.event.inputs['version-type'] }}
         new-version: ${{ github.event.inputs['new-version'] }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    - run: echo ${{ steps.npm-bump.outputs['release-tag'] }}
+    - run: echo "$RELEASE_TAG"
+      env:
+        RELEASE_TAG: ${{ steps.npm-bump.outputs['release-tag'] }}
