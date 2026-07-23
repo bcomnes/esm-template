@@ -1,6 +1,6 @@
 # Agent Guidelines
 
-- Write Markdown prose with one sentence per line so git diffs stay focused and readable.
+- Write Markdown prose with one sentence per line. Use one newline between sentences to keep them in the same paragraph; two newlines create a new paragraph.
 - Never use inline type imports.
 - Always favor `@import` syntax at the top of JavaScript files for JSDoc types.
 - This repo does not require TypeScript declaration builds during normal development.
