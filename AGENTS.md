@@ -1,6 +1,6 @@
 # Agent Guidelines
 
-- Write Markdown prose with one sentence per line. Use one newline between sentences to keep them in the same paragraph; two newlines create a new paragraph.
+- In Markdown files, put each sentence on its own line while keeping sentences in the same paragraph on adjacent lines with no blank line between them. Do not apply this line-breaking rule to GitHub issue or pull request descriptions; keep sentences in the same paragraph on the same line.
 - Never use inline type imports.
 - Always favor `@import` syntax at the top of JavaScript files for JSDoc types.
 - This repo does not require TypeScript declaration builds during normal development.
