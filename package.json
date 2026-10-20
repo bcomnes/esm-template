@@ -8,15 +8,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@voxpelli/tsconfig": "^16.1.0",
+    "@voxpelli/tsconfig": "^17.0.0",
     "@types/node": "^26.0.0",
-    "neostandard": "^0.13.0",
+    "neostandard": "^0.14.1",
     "npm-run-all2": "^9.0.0",
     "releasearoni": "^0.2.0",
     "typescript": "~6.0.3"
   },
   "engines": {
-    "node": ">=20",
+    "node": "^22.13.0 || >=24",
     "npm": ">=10"
   },
   "homepage": "https://github.com/bcomnes/{{name}}",
